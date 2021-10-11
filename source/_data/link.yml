@@ -1,0 +1,87 @@
+- class_name: 我的网站 🎉🎉
+  class_desc: 成年人当然全都要。
+  link_list:
+    - name: guole's Blog
+      link: https://guole.fun/
+      avatar: https://cdn.guole.fun/logo/guole.fun.png
+      descr: 本站 Hexo 版
+    - name: guole's Blog
+      link: https://blog.guole.fun/
+      avatar: https://cdn.guole.fun/logo/blog.guole.fun.png
+      descr: 本站 Hugo 版
+    - name: 音乐小站
+      link: https://music.guole.fun/
+      avatar: https://cdn.guole.fun/logo/music.png
+      descr: 一个小想法，造就了第一个小站
+
+- class_name: 友情链接 👋👋
+  class_desc: 天下快意之事莫若友，快友之事莫若谈。
+  link_list:
+    - name: realyao
+      link: https://realyao.me/
+      avatar: https://cdn.guole.fun/logo/realyao.png
+      descr: 其个人 Blog 吸引我接触前端
+    - name: g1eny0ung
+      link: https://g1eny0ung.site/
+      avatar: https://cdn.guole.fun/logo/g1eny0ung.jpg
+      descr: 本站 Hugo 版主题作者
+    - name: MYW
+      link: https://immyw.com/
+      avatar: https://immyw.com/img/avatar.png
+      descr: 当前看到的本站主题作者
+    - name: iMaeGoo
+      link: https://www.imaegoo.com/
+      avatar: https://cdn.guole.fun/logo/虹墨.jpg
+      descr: Twikoo 功能作者
+    - name: 黑石博客
+      link: https://www.heson10.com/
+      avatar: https://cdn.guole.fun/logo/黑石.png
+      descr: BBtalk 功能作者
+    - name: 木木木木木
+      link: https://immmmm.com/
+      avatar: https://cdn.guole.fun/logo/木木木.jpg
+      descr: Bber 功能作者
+    - name: 小康博客
+      link: https://www.antmoe.com/
+      avatar: https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg
+      descr: 一个收藏回忆与分享技术的地方！
+
+- class_name: 现实中的好PY 🤝🤝
+  class_desc: 
+  link_list:
+    - name: Sakura
+      link: https://www.hanz.vip/
+      avatar: https://cdn.guole.fun/logo/sakura.jpg
+      descr: 朋友，PHP 开发，唱歌贼好听
+    - name: 大西瓜
+      link: http://bikabi.cn/
+      avatar: https://cdn.guole.fun/logo/大西瓜.png
+      descr: 朋友，前端开发，羽毛球贼厉害
+
+- class_name: 推荐网站 ✌✌
+  class_desc: 值得推荐的网站
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/zh-cn/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、简单且强大的网页框架
+    - name: Hugo
+      link: https://gohugo.io/
+      avatar: https://cdn.guole.fun/logo/hugo.png
+      descr: Go 语言的静态网站生成器
+    - name: Butterfly
+      link: https://butterfly.js.org/
+      avatar: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-github-avatar.png
+      descr: 本站主题，真好看
+    - name: Lovelt
+      link: https://gohugo.io/
+      avatar: https://cdn.guole.fun/logo/lovelt.png
+      descr: Hugo主题，曾借鉴过一些样式，感谢
+    - name: 阿里图标库
+      link: https://www.iconfont.cn/
+      avatar: https://cdn.guole.fun/logo/weizhi.png
+      descr: 多次使用，感谢
+    - name: 8K壁纸库
+      link: https://wallhaven.cc/
+      avatar: https://cdn.guole.fun/logo/weizhi.png
+      descr: 本站背景从这里来，感谢
