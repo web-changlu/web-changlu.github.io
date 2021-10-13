@@ -1,3 +1,4 @@
+let instance = null;
 class Timepiece {
 
     constructor() {
@@ -12,12 +13,12 @@ class Timepiece {
 
     init() {
         console.log('init timepiece...');
-        let timeDom = document.createElement('ul');
-        timeDom.appendChild($('hr')[0]);
-        timeDom.classList.add('clock');
-        timeDom.setAttribute('id', 'helang-clock');
-        this.$el = $(timeDom);
-        $('#page-header')[0].appendChild(this.$el[0]);
+        const timeDom = $('<ul><hr/></ul>');
+        timeDom[0].classList.add('clock');
+        timeDom[0].setAttribute('id', 'helang-clock');
+        timeDom.appendTo('#page-header');
+        this.$el = timeDom;
+        
         let nowDate=new Date();
             this.dateInfo={
                 "year":nowDate.getFullYear(),
@@ -27,7 +28,7 @@ class Timepiece {
                 "minute":nowDate.getMinutes(),
                 "sec":nowDate.getSeconds()
             };
-            console.log(this.dateInfo);
+            // console.log(this.dateInfo);
 
             this.setDate();
             this.setHour();
@@ -164,7 +165,7 @@ class Timepiece {
 
         setTimeout( () => {
             this.$el.find("hr").addClass("active").css({
-                "width":"49%"
+                "width":"105%"
             });
             this.start();
         },300);
@@ -254,7 +255,20 @@ class Timepiece {
         }
     };
 }
+class MyEvents {
+    constructor() {
+        if(instance) {
+            return instance;
+        }else{
+            instance = this;
+            this.init();
+        }
+    }
 
+    init() {
+        console.log('init user events');
+    }
+}
 btf.isJqueryLoad(
      () => {
          new Timepiece();

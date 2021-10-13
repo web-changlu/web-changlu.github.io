@@ -10,10 +10,9 @@
         background-position: 0% 50%;
     }
 }
-/* #page-header{
-    background: url('../img/fairy.jpg') no-repeat;
-    background-size: cover;
-} */
+#page-header{
+    overflow: hidden;
+}
 #page-header::before{    
     content: '';
     position: absolute;
