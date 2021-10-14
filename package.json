@@ -25,5 +25,9 @@
     "hexo-server": "^2.0.0",
     "hexo-theme-landscape": "^0.0.3",
     "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "workbox-build": "^6.3.0"
   }
 }

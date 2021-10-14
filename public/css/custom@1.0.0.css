@@ -24,10 +24,6 @@
     z-index: 1;
     filter: blur(3px);
     background: url('../img/fairy.jpg') no-repeat;
-    background-size: 100% 100%;
-}
-#page-header[page-size=min]::before{
-    background: url('../img/stabber.jpg') no-repeat;
     background-size: cover;
 }
 #footer{
@@ -35,29 +31,3 @@
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }
-
-/* pwa相关 */
-.app-refresh {
-    position: fixed;
-    top: -2.2rem;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    padding: 0 1rem;
-    font-size: 15px;
-    height: 2.2rem;
-    transition: all 0.3s ease;
-  }
-  .app-refresh-wrap {
-    display: flex;
-    color: #fff;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .app-refresh-wrap span {
-    color: #fff;
-    text-decoration: underline;
-    cursor: pointer;
-  }
