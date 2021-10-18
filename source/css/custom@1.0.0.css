@@ -27,8 +27,9 @@
     background-size: 100% 100%;
 }
 #page-header[page-size=min]::before{
-    background: url('../img/stabber.jpg') no-repeat;
-    background-size: cover;
+    background: url('../img/gotsisop.jpg') no-repeat;
+    filter: blur(1px);
+    background-size: 100%;
 }
 #footer{
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);

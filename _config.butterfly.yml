@@ -40,12 +40,12 @@ highlight_height_limit: false # unit: px
 code_word_wrap: false
 
 # copy settings
-# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
+copyright: 著作权归作者所有。商业转载请联络作者获得授权，非商业转载请注明出处。
 copy:
   enable: true
   copyright:
-    enable: false
-    limit_count: 50
+    enable: true
+    limit_count: 120
 
 # social settings (社交圖標設置)
 # formal:
@@ -89,7 +89,7 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: /img/siteicon/favicon.png
 
 # Avatar (頭像)
 avatar:
@@ -101,7 +101,6 @@ disable_top_img: false
 
 # The banner image of home page
 index_img:
-
 # If the banner of page not setting, it will show the top_img
 default_top_img:
 
@@ -151,10 +150,10 @@ error_404:
 
 post_meta:
   page: # Home Page
-    date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
+    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
     date_format: date # date/relative 顯示日期還是相對日期
     categories: true # true or false 主頁是否顯示分類
-    tags: false # true or false 主頁是否顯示標籤
+    tags: true # true or false 主頁是否顯示標籤
     label: true # true or false 顯示描述性文字
   post:
     date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
@@ -418,8 +417,8 @@ crisp:
 footer:
   owner:
     enable: true
-    since: 2020
-  custom_text:
+    since: 2021
+  custom_text: 
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -481,20 +480,20 @@ site_verification:
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
 
-# theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
-#   button_hover: "#FF7242"
-#   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
+theme_color:
+enable: true
+main: "#FAEB69"
+paginator: "#00c4b6"
+button_hover: "#FAEB69"
+text_selection: "#00c4b6"
+link_color: "#99a9bf"
+meta_color: "#858585"
+hr_color: "#FAEB69"
+code_foreground: "#F47466"
+code_background: "rgba(27, 31, 35, .05)"
+toc_color: "#00c4b6"
+blockquote_padding_color: "#49b1f5"
+blockquote_background_color: "#49b1f5"
 
 # The top_img settings of home page
 # default: top img - full screen, site info - middle (默認top_img全屏，site_info在中間)
@@ -512,7 +511,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background:
+background: "#00c4b6"
 
 # Footer Background
 footer_bg: false
@@ -695,7 +694,7 @@ busuanzi:
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
   enable: true
-  publish_date:
+  publish_date: 2021-10-10
 
 # Aside widget - Newest Comments
 newest_comments:
@@ -713,13 +712,13 @@ change_font_size: true
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
-  default: 繁
+  default: 简
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
   defaultEncoding: 2
   # Time delay
-  translateDelay: 0
+  translateDelay: 100
   # The text of the button when the language is Simplified Chinese
   msgToTraditionalChinese: '繁'
   # The text of the button when the language is Traditional Chinese
@@ -737,7 +736,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: true
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
@@ -826,11 +825,11 @@ lazyload:
 pwa:
   enable: true
   manifest: /pwa/manifest.json
-  theme_color: "#fff"
-  apple_touch_icon: /pwa/apple-touch-icon.png
-  favicon_32_32: /pwa/32.png
-  favicon_16_16: /pwa/16.png
-  mask_icon: /pwa/safari-pinned-tab.svg
+  theme_color: "#FBEC6C"
+  apple_touch_icon: /img/siteicon/apple-touch-icon.png
+  favicon_32_32: /img/siteicon/favicon-32x32.png
+  favicon_16_16: /img/siteicon/favicon-16x16.png
+  mask_icon: /img/siteicon/safari-pinned-tab.svg
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/

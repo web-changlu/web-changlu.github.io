@@ -1,8 +1,10 @@
+// import imagemin from 'gulp-imagemin';
 const gulp = require('gulp')
 const cleanCSS = require('gulp-clean-css')
 const htmlmin = require('gulp-html-minifier-terser')
 const htmlclean = require('gulp-htmlclean')
 const imagemin = require('gulp-imagemin')
+
 const workbox = require("workbox-build");
 // gulp-terser (如果使用 gulp-terser,把下面的//去掉)
 // const terser = require('gulp-terser');
@@ -11,7 +13,10 @@ const workbox = require("workbox-build");
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 
+
+
 //pwa
+
 gulp.task('generate-service-worker', () => {
   return workbox.injectManifest({
     swSrc: './sw-template.js',
@@ -46,6 +51,7 @@ gulp.task('compress', () =>
 // )
 
 //css
+
 gulp.task('minify-css', () => {
   return gulp.src('./public/**/*.css')
     .pipe(cleanCSS({
@@ -56,6 +62,7 @@ gulp.task('minify-css', () => {
 
 
 // 壓縮 public 目錄內 html
+
 gulp.task('minify-html', () => {
   return gulp.src('./public/**/*.html')
     .pipe(htmlclean())
@@ -74,6 +81,7 @@ gulp.task('minify-html', () => {
 });
 
 // 壓縮 public/uploads 目錄內圖片
+
 gulp.task('minify-images', async () => {
   gulp.src('./public/img/**/*.*')
     .pipe(imagemin({
@@ -86,6 +94,12 @@ gulp.task('minify-images', async () => {
 });
 
 // 執行 gulp 命令時執行的任務
-gulp.task("default", gulp.series("generate-service-worker", gulp.parallel(
-    'compress','minify-html', 'minify-css', 'minify-images'
-)));
+// gulp.task("default", gulp.series("generate-service-worker", gulp.parallel(
+//     'compress','minify-html', 'minify-css', 'minify-images'
+// )));
+
+const build = gulp.series("generate-service-worker", gulp.parallel(
+  'compress','minify-html', 'minify-css'
+));
+
+exports.default = build;
