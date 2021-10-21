@@ -1,7 +1,6 @@
 let instance = null;
 let timer = null;
 class Timepiece {
-
     constructor() {
         this.init()
     }
@@ -345,11 +344,127 @@ class PWA {
     }
 }
 
+class InsertDom{
+    
+    constructor() {
+        this.addAplayer();
+        this.options = {
+            container: this.apDom[0],
+            autoplay: false,
+            theme: '#FAEB6C',
+            loop: 'all',
+            order: 'random',
+            preload: 'auto',
+            volume: 0.7,
+            mutex: true,
+            listFolded: true,
+            listMaxHeight: 180,
+            lrcType: 3,
+            audio: [
+                {
+                    name: '觅红',
+                    artist: '兔裹煎蛋卷',
+                    url: '/music/觅红.mp3',
+                    cover: '/music/mihong.png',
+                    lrc: '',
+                    theme: '#ebd0c2'
+                },
+                {
+                    name: '你的样子（钢琴版）',
+                    artist: 'Killed by Moy',
+                    url: '/music/你的样子（钢琴版）.flac',
+                    cover: '/music/cover.png',
+                    lrc: '',
+                    theme: '#ebd0c2'
+                },
+            ]
+        }
+        this.ap = new APlayer(this.options);
+
+        const colorThief = new ColorThief();
+        const image = new Image();
+        const xhr = new XMLHttpRequest();
+        this.setTheme(this.ap.list.index);
+        this.ap.on('listswitch', (index) => {
+            this.setTheme(index);
+        });
+        this.moveAplayer();
+    }
+
+    ap = null
+    options = null
+    apDom = null
+    aplayerContainer = null;
+
+    addAplayer() {
+        // $('<div class="aplayer no-destroy" data-id="6987078772" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div>').appendTo('body');
+        const aplayerContainer = $(`<div class='aplayer-container'></div>`);
+
+        const apDom = $('<div></div>');
+        apDom[0].classList.add('aplayer');
+        // apDom[0].classList.add('aplayer-position');
+        $(`<p class='aplayer-title'><i class="fa fa-music"></i>音乐鉴赏</p><i class="fa fa-times closemusic"></i>`).appendTo(aplayerContainer);
+        apDom.appendTo(aplayerContainer);
+        aplayerContainer.appendTo('body');
+        // apDom.appendTo('body');
+        this.apDom = apDom;
+        this.aplayerContainer = aplayerContainer;
+        
+    }
+    setTheme(index)  {
+        if (!this.ap.list.audios[index].theme) {
+            xhr.onload = function(){
+                let coverUrl = URL.createObjectURL(this.response);
+                image.onload = function(){
+                    let color = colorThief.getColor(image);
+                    this.ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+                    URL.revokeObjectURL(coverUrl)
+                };
+                image.src = coverUrl;
+            }
+            xhr.open('GET', ap.list.audios[index].cover, true);
+            xhr.responseType = 'blob';
+            xhr.send();
+        }
+    };
+
+    moveAplayer() {
+        $('.aplayer-title').bind('mousedown', (e) => {
+            // 算出鼠标相对元素的位置
+        const disX = e.clientX - this.aplayerContainer[0].offsetLeft;
+        const disY = e.clientY - this.aplayerContainer[0].offsetTop;
+        const containerHeight = this.aplayerContainer.height(), containerWidth = this.aplayerContainer.width();
+        document.onmousemove = (e) => {
+          const left = e.clientX - disX
+          const top = e.clientY - disY;
+        //   let maxTop = window.innerHeight - containerHeight, maxLeft = window.innerWidth *.8;
+
+        //   if(top > windowHeight){
+        //       top = windowHeight;
+        //   }else if(top < 0){
+        //       top = 0;
+        //   }
+        //   if(left < 0){
+        //       left = 0;
+        //   }else if(left >)
+          // 移动元素
+          this.aplayerContainer.css({"left": left + 'px', "top": top + 'px'});
+        }
+        document.onmouseup = (e) => {
+          // 鼠标弹起停止移动
+          document.onmousemove = null
+          // 防止弹起后再次循环
+          document.onmouseup = null
+        }
+        })
+    }
+}
 
 
 btf.isJqueryLoad(
      () => {
          new MyEvents();
+         new InsertDom();
          new PWA();
      }
 );
