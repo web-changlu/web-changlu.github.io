@@ -348,6 +348,7 @@ class InsertDom{
     
     constructor() {
         this.addAplayer();
+        this.addApFlod();
         this.options = {
             container: this.apDom[0],
             autoplay: false,
@@ -367,7 +368,7 @@ class InsertDom{
                     url: '/music/觅红.mp3',
                     cover: '/music/mihong.png',
                     lrc: '',
-                    theme: '#ebd0c2'
+                    // theme: '#ebd0c2'
                 },
                 {
                     name: '你的样子（钢琴版）',
@@ -375,27 +376,33 @@ class InsertDom{
                     url: '/music/你的样子（钢琴版）.flac',
                     cover: '/music/cover.png',
                     lrc: '',
-                    theme: '#ebd0c2'
+                    // theme: '#ebd0c2'
+                },
+                {
+                    name: '奢香夫人',
+                    artist: '潘柚彤',
+                    url: '/music/奢香夫人-潘.m4a',
+                    cover: '/music/pyt.png',
+                    lrc: '',
+                    // theme: '#ebd0c2'
                 },
             ]
         }
         this.ap = new APlayer(this.options);
-
-        const colorThief = new ColorThief();
-        const image = new Image();
+        this.bindAplayerMove();
+        this.bindaplayerFlod();
         const xhr = new XMLHttpRequest();
-        this.setTheme(this.ap.list.index);
-        this.ap.on('listswitch', (index) => {
-            this.setTheme(index);
+        this.setTheme(this.ap.list.index, xhr);
+        this.ap.on('listswitch', ({index}) => {
+            this.setTheme(index, xhr);
         });
-        this.moveAplayer();
     }
 
     ap = null
     options = null
     apDom = null
     aplayerContainer = null;
-
+    apFlod = null;
     addAplayer() {
         // $('<div class="aplayer no-destroy" data-id="6987078772" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div>').appendTo('body');
         const aplayerContainer = $(`<div class='aplayer-container'></div>`);
@@ -411,42 +418,100 @@ class InsertDom{
         this.aplayerContainer = aplayerContainer;
         
     }
-    setTheme(index)  {
-        if (!this.ap.list.audios[index].theme) {
-            xhr.onload = function(){
+    addApFlod() {
+        const apFlod = $(`<div class='aplayer-flod'></div>`)
+        apFlod.appendTo('body');
+        apFlod.attr('flod', false);
+        this.apFlod = apFlod;
+    }
+    setTheme(index, xhr)  {
+        const image = new Image();
+        const _this = this;
+        const colorThief = new ColorThief();
+        if (!_this.ap.list.audios[index].theme) {
+            xhr.onload = function() {
                 let coverUrl = URL.createObjectURL(this.response);
-                image.onload = function(){
+                image.onload = () =>{
                     let color = colorThief.getColor(image);
-                    this.ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+                    _this.ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
                     URL.revokeObjectURL(coverUrl)
                 };
                 image.src = coverUrl;
             }
-            xhr.open('GET', ap.list.audios[index].cover, true);
+            xhr.open('GET', _this.ap.list.audios[index].cover, true);
             xhr.responseType = 'blob';
             xhr.send();
         }
     };
-
-    moveAplayer() {
+    bindaplayerFlod() {
+        $('.closemusic').bind('click', (e) => {
+            const leftInstance = e.screenX;
+            const screenWidth = window.innerWidth;
+            const positionObj = {};
+            // const width = this.aplayerContainer.width();
+             // 移动元素
+            this.aplayerContainer.css({"width": 0, 'border': 'none'});
+            // this.aplayerContainer.css({"left": '-15rem', "top": '80%', "width": 0});
+            if (leftInstance < (screenWidth / 2)) {
+                // alert('靠左边');
+                positionObj.left = true;
+              } else {
+                // alert('靠右边');
+                positionObj.left = false;
+              }
+            const snackbarBg =
+                document.documentElement.getAttribute('data-theme') === 'light'
+                  ? GLOBAL_CONFIG.Snackbar.bgLight
+                  : GLOBAL_CONFIG.Snackbar.bgDark;
+              const snackbarPos = GLOBAL_CONFIG.Snackbar.position
+            Snackbar.show({
+                text: `点击${positionObj.left?'左':'右'}下角按钮可再次开启音乐播放器`,
+                backgroundColor: snackbarBg,
+                duration: 500000,
+                pos: snackbarPos,
+                actionTextColor: '#F8A061',
+              })
+            // alert('点击左下角按钮可再次开启音乐播放器')
+            setTimeout(() =>{
+                this.apFlod.attr('flod', true);
+            }, 3000)
+            
+            if (positionObj.left) {
+                // alert('靠左边');
+                this.apFlod.attr('left', true);
+              } else {
+                // alert('靠右边');
+                this.apFlod.attr('left', false);
+              }
+        });
+        this.apFlod.bind('click', (e) => {
+            this.apFlod.attr('flod', false);
+            this.apFlod.removeAttr('left');
+            this.aplayerContainer.css({"width":"18rem", 'border': '3px solid #fff'});
+            // this.aplayerContainer.css({"left": 0, "width":"14rem"});
+        })
+    }
+    bindAplayerMove() {
         $('.aplayer-title').bind('mousedown', (e) => {
             // 算出鼠标相对元素的位置
         const disX = e.clientX - this.aplayerContainer[0].offsetLeft;
         const disY = e.clientY - this.aplayerContainer[0].offsetTop;
         const containerHeight = this.aplayerContainer.height(), containerWidth = this.aplayerContainer.width();
         document.onmousemove = (e) => {
-          const left = e.clientX - disX
-          const top = e.clientY - disY;
-        //   let maxTop = window.innerHeight - containerHeight, maxLeft = window.innerWidth *.8;
+          let left = e.clientX - disX
+          let top = e.clientY - disY;
+          let maxTop = window.innerHeight - containerHeight, maxLeft = window.innerWidth - containerWidth;
 
-        //   if(top > windowHeight){
-        //       top = windowHeight;
-        //   }else if(top < 0){
-        //       top = 0;
-        //   }
-        //   if(left < 0){
-        //       left = 0;
-        //   }else if(left >)
+          if(top >= maxTop){
+              top = maxTop;
+          }else if(top < 0){
+              top = 0;
+          }
+          if(left < 0){
+              left = 0;
+          }else if(left >= maxLeft){
+              left = maxLeft;
+          }
           // 移动元素
           this.aplayerContainer.css({"left": left + 'px', "top": top + 'px'});
         }

@@ -1,1 +1,45 @@
 /* 网站配色 */
+#web_bg,#footer{
+    background: linear-gradient(-45deg, #E2F955, #65F0EA, #92F053, #EF9DD8);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* #content-inner {
+     白天模式下 卡片背景色
+    --light_bg_color: rgba(255, 255, 255, 0.6);
+    夜间模式下 卡片背景色
+    --dark_bg_color: rgba(18, 18, 18, 0.8);
+    白天模式下 页面背景色
+    --light_page_color: rgba(255, 255, 255, 0.5);
+    夜间模式下 页面背景色
+    --dark_page_color: rgba(18, 18, 18, 0.8);
+} */
+:root {
+    --card-bg: rgba(255, 255, 255, 0.6);
+}
+[data-theme='dark'] {
+    --card-bg: rgba(18, 18, 18, 0.8);
+}
+/* 代码字体
+@codefont: 'https://cdn.jsdelivr.net/npm/kang-static/Hexo/font/woff2/JetBrainsMono-Medium.woff2';
+鼠标默认样式
+@pointer_default: 'https://cdn.jsdelivr.net/npm/kang-static/Hexo/img/default.cur';
+指针点击样式
+@pointer_pointer: 'https://cdn.jsdelivr.net/npm/kang-static/Hexo/img/pointer.cur';
+个人信息卡片鼠标悬停是否显示烟花
+@avatarHover: true;
+页脚渐变 不透明时为半透明状态，如需更改请自行到 footer.less进行调整
+@footerGradient: false;
+双栏布局
+@layout: false; */

@@ -1,8 +1,8 @@
 {
     "name": "changlu's Blog",
     "short_name": "changlu", 
-    "theme_color": "#49b1f5",
-    "background_color": "#49b1f5",
+    "theme_color": "#9DD2BC",
+    "background_color": "#FCED7E",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",

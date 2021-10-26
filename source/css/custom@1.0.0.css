@@ -1,15 +1,4 @@
 /* 自定义css */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 #page-header{
     overflow: hidden;
 }
@@ -31,11 +20,7 @@
     filter: blur(1px);
     background-size: 100%;
 }
-#footer{
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-}
+
 
 /* pwa相关 */
 .app-refresh {
@@ -62,14 +47,64 @@
     text-decoration: underline;
     cursor: pointer;
 }
+.aplayer-flod{
+    position: fixed;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    top: 90%;
+    z-index: 1;
+    /* border: 2px solid #ccc; */
+    background: url('/img/cloudmusic.png') no-repeat center;
+    background-size: cover;
+    transition: all .6s ease-in-out;
+    cursor: pointer;
+}
+.aplayer-flod[left=true]:hover{
+    background: url('/img/right.png') no-repeat center;
+    background-size: cover;
+    transform: rotate(360deg);
+}
+.aplayer-flod[left=false]:hover{
+    background: url('/img/right.png') no-repeat center;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+.aplayer-flod[flod=false]{
+    display: none;
+}
+.aplayer-flod[left=true]{
+    left: 2%;
+}
+.aplayer-flod[left=false]{
+    right: 0;
+}
 .aplayer-container{
     position: fixed;
-    width: 280px;
+    /* width: 14rem; */
+    width: 18rem;
     top: 80%;
     z-index: 6;
     border: 3px solid #fff;
     border-radius: 5px;
-    color: #fff;
+    color: var(--font-color);
+    user-select: none;
+    transition: width .3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--card-bg);
+    box-shadow: var(--card-hover-box-shadow);
+}
+.aplayer-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255,.3);
+    z-index: -1;
+    filter: blur(6px);
 }
 .aplayer-container p {
     display: inline-block;
@@ -81,6 +116,18 @@
 .aplayer-container i{
     margin-right: 5px;
 }
+.aplayer-container .closemusic{
+    cursor: pointer;
+}
 .aplayer{
     border-radius: 3px;
+}
+
+.layout_post>#post{
+    background: rgba(255, 255, 255, 0)
+}
+#site-info {
+    right: -10%;
+    top: 70%!important;
+    z-index: 1;
 }

@@ -1,7 +1,7 @@
 const workboxVersion = '6.3.0';
 
 importScripts(`https://storage.googleapis.com/workbox-cdn/releases/${workboxVersion}/workbox-sw.js`);
-
+// console.log(workbox,'wb-----------------')
 workbox.core.setCacheNameDetails({
     prefix: "ChangLu's Blog"
 });
