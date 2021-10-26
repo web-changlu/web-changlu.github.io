@@ -1,5 +1,12 @@
 ---
 title: Hello World
+date: 2021-10-26
+comments: true #是否可评论
+categories: '万象天' #分类
+tags: 
+    - blog 
+    - hexo
+    - butterfly
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 cmd 运行 sfc /scannow 可以自动修复系统受损文件

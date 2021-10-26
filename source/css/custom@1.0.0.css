@@ -131,3 +131,6 @@
     top: 70%!important;
     z-index: 1;
 }
+#post-info {
+    z-index: 1;
+}
