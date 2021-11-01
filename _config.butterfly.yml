@@ -135,9 +135,9 @@ cover:
   archives_enable: true
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
-  position: both
+  position: left
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
-  default_cover:
+  default_cover: /img/fairy.jpg
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -620,7 +620,7 @@ subtitle:
   # Typewriter Effect (打字效果)
   effect: true
   # loop (循環打字)
-  loop: true
+  loop: false
   # source調用第三方服務
   # source: false 關閉調用
   # source: 1  調用搏天api的隨機語錄（簡體）
