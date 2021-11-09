@@ -284,7 +284,7 @@ class MyEvents {
             $('#page-header').attr('page-size','min');
         }else{
             new Timepiece();
-            $('#page-header').attr('page-size', 'normal' );
+            // $('#page-header').attr('page-size', 'normal' );
         }
     }
 }
@@ -467,6 +467,8 @@ class InsertDom{
             Snackbar.show({
                 text: `点击${positionObj.left?'左':'右'}下角按钮可再次开启音乐播放器`,
                 backgroundColor: snackbarBg,
+                actionText: '我知道了',
+                actionTextColor: '#fff',
                 duration: 500000,
                 pos: snackbarPos,
                 actionTextColor: '#F8A061',

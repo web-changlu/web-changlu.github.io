@@ -1,5 +1,11 @@
 /* 网站配色 */
-#web_bg,#footer{
+#web_bg{
+    background: linear-gradient(-45deg, #B6FED0, #6DE8FB, #C3F24D, #FFF0FB);
+    /* #E2F955, #65F0EA, #92F053, #EF9DD8 */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+#footer{
     background: linear-gradient(-45deg, #E2F955, #65F0EA, #92F053, #EF9DD8);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
