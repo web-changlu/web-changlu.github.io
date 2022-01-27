@@ -23,6 +23,7 @@ menu:
   清单||fas fa-list:
      音乐: /music/ || fas fa-music
      电影: /movies/ || fas fa-video
+     妙妙屋: /mmhouse/ || iconfont icon-fanju
   小记 || iconfont icon-yumaobi1:
      万象天: /vientianeSky/ || iconfont icon-ArtboardCopy
      奇趣事: /strangeAndInterestingStory/ || iconfont icon-pintu
@@ -43,7 +44,8 @@ highlight_height_limit: false # unit: px
 code_word_wrap: false
 
 # copy settings
-copyright: 著作权归作者所有。商业转载请联络作者获得授权，非商业转载请注明出处。
+copyright: 文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有侵权请联系本人删除，谢谢！
+#著作权归作者所有。商业转载请联络作者获得授权，非商业转载请注明出处。
 copy:
   enable: true
   copyright:
@@ -848,7 +850,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_2923893_fc39o7rer2c.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2923893_akri5pp52q8.css">
     <link rel="stylesheet" href="/css/color@1.0.0.css">
     <link rel="stylesheet" href="/css/custom@1.0.0.css">
     <link rel="stylesheet" href="/css/timepiece.css">

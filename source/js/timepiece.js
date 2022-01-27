@@ -292,7 +292,7 @@ class MyEvents {
 // pwa相关
 class PWA {
     constructor() {
-        this.insertDom();
+        this.insertRemindDom();
         if ('serviceWorker' in navigator) {
             if (navigator.serviceWorker.controller) {
               navigator.serviceWorker.addEventListener('controllerchange', function () {
@@ -334,7 +334,7 @@ class PWA {
           }
     }
 
-    insertDom() {
+    insertRemindDom() {
         $(`<div class="app-refresh" id="app-refresh">
         <div class="app-refresh-wrap">
           <label>✨ 网站已更新最新版本 👉</label>
@@ -349,6 +349,7 @@ class InsertDom{
     constructor() {
         this.addAplayer();
         this.addApFlod();
+        this.addWaves();
         this.options = {
             container: this.apDom[0],
             autoplay: false,
@@ -423,6 +424,24 @@ class InsertDom{
         apFlod.appendTo('body');
         apFlod.attr('flod', false);
         this.apFlod = apFlod;
+    }
+    addWaves(){
+        const waves = $(`
+            <div id='waves'>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0"></use>
+                        <use xlink:href="#gentle-wave" x="48" y="3"></use>
+                        <use xlink:href="#gentle-wave" x="48" y="5"></use>
+                        <use xlink:href="#gentle-wave" x="48" y="7"></use>
+                    </g>
+                </svg>
+            </div>
+        `)
+        $('#page-header').after(waves);
     }
     setTheme(index, xhr)  {
         const image = new Image();

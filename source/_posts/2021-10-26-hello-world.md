@@ -1,7 +1,6 @@
 ---
 title: Hello World
 date: 2021-10-26
-password: changlu
 comments: true #是否可评论
 categories: '万象天' #分类
 img: /source/img/bg_01.png
