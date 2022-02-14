@@ -1,22 +1,18 @@
 - class_name: 我的网站 🎉🎉
   class_desc: 成年人当然全都要。
   link_list:
-    - name: guole's Blog
-      link: https://guole.fun/
-      avatar: https://cdn.guole.fun/logo/guole.fun.png
-      descr: 本站 Hexo 版
-    - name: guole's Blog
-      link: https://blog.guole.fun/
-      avatar: https://cdn.guole.fun/logo/blog.guole.fun.png
-      descr: 本站 Hugo 版
-    - name: 音乐小站
-      link: https://music.guole.fun/
-      avatar: https://cdn.guole.fun/logo/music.png
-      descr: 一个小想法，造就了第一个小站
+    - name: Changlu-UI
+      link: https://web-changlu.github.io/changlu-ui/
+      # avatar: https://cdn.guole.fun/logo/guole.fun.png
+      descr: 组件库文档，正在完善中。
 
 - class_name: 友情链接 👋👋
   class_desc: 天下快意之事莫若友，快友之事莫若谈。
   link_list:
+    - name: SaraKale
+      link: https://sarakale.gitee.io/blog
+      avatar: https://cdn.jsdelivr.net/gh/SaraKale/blogimg@0.1/sarakale.jpg
+      descr: 星轮流转，唯心不变…
     - name: realyao
       link: https://realyao.me/
       avatar: https://cdn.guole.fun/logo/realyao.png
@@ -46,17 +42,17 @@
       avatar: https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg
       descr: 一个收藏回忆与分享技术的地方！
 
-- class_name: 现实中的好PY 🤝🤝
-  class_desc: 
-  link_list:
-    - name: Sakura
-      link: https://www.hanz.vip/
-      avatar: https://cdn.guole.fun/logo/sakura.jpg
-      descr: 朋友，PHP 开发，唱歌贼好听
-    - name: 大西瓜
-      link: http://bikabi.cn/
-      avatar: https://cdn.guole.fun/logo/大西瓜.png
-      descr: 朋友，前端开发，羽毛球贼厉害
+# - class_name: 现实中的好PY 🤝🤝
+#   class_desc: 
+#   link_list:
+#     - name: Sakura
+#       link: https://www.hanz.vip/
+#       avatar: https://cdn.guole.fun/logo/sakura.jpg
+#       descr: 朋友，PHP 开发，唱歌贼好听
+#     - name: 大西瓜
+#       link: http://bikabi.cn/
+#       avatar: https://cdn.guole.fun/logo/大西瓜.png
+#       descr: 朋友，前端开发，羽毛球贼厉害
 
 - class_name: 推荐网站 ✌✌
   class_desc: 值得推荐的网站
