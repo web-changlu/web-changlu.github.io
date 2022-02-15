@@ -545,10 +545,9 @@ class InsertDom {
 }
 
 
-btf.isJqueryLoad(
-    () => {
-        new MyEvents();
-        new InsertDom();
-        new PWA();
-    }
-);
+(() => {
+    new MyEvents();
+    new InsertDom();
+    new PWA();
+}
+)();

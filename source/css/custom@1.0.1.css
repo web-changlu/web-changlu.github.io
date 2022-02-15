@@ -20,8 +20,16 @@
     filter: blur(1px);
     background-size: 100%;
 }
-
-
+#page-header[page-size=min] #post-info{
+    width: 100%!important;
+    left: 0;
+}
+#post-info {
+    z-index: 3;
+    /* backdrop-filter: blur(5px); */
+    width: auto!important;
+    left: 50%;
+}
 /* pwa相关 */
 .app-refresh {
     position: fixed;
@@ -131,9 +139,7 @@
     top: 70%!important;
     z-index: 1;
 }
-#post-info {
-    z-index: 1;
-}
+
 
 /* 滚动条 */
 ::-webkit-scrollbar {
@@ -183,7 +189,7 @@
 
 @media (max-width: 767px) {
     .waves {
-        height:10vh
+        height:17vh
     }
 }
 
