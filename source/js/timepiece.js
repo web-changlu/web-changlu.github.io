@@ -364,24 +364,24 @@ class InsertDom {
                 {
                     name: '觅红',
                     artist: '兔裹煎蛋卷',
-                    url: '/music/觅红.mp3',
-                    cover: '/music/mihong.png',
+                    url: '/assets/music/FindRed.mp3',
+                    cover: '/assets/music/mihong.png',
                     lrc: '',
                     // theme: '#ebd0c2'
                 },
                 {
                     name: '你的样子（钢琴版）',
                     artist: 'Killed by Moy',
-                    url: '/music/你的样子（钢琴版）.flac',
-                    cover: '/music/cover.png',
+                    url: '/assets/music/YourAppearance(PianoVersion).flac',
+                    cover: '/assets/music/cover.png',
                     lrc: '',
                     // theme: '#ebd0c2'
                 },
                 {
                     name: '奢香夫人',
                     artist: '潘柚彤',
-                    url: '/music/奢香夫人-潘.m4a',
-                    cover: '/music/pyt.png',
+                    url: '/assets/music/Mrs.Luxe-Pan.m4a',
+                    cover: '/assets/music/pyt.png',
                     lrc: '',
                     // theme: '#ebd0c2'
                 },

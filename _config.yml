@@ -13,8 +13,9 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://web-changlu.github.io/
-permalink: :year/:month/:day/:title/
+# url: https://web-changlu.github.io/
+url: https://changlu.xyz/
+permalink: :year/:month/:day/:category/:id/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -71,9 +72,15 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
-category_map:
-tag_map:
+category_map: 
+  万象天: vientianeSky
+  奇趣事: strangeAndInterestingStory
+  计算机网络: computerNetwork
+  JavaScript: javaScript
 
+tag_map:
+  网络协议: networkProtocol
+  三体: trisomy
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true
