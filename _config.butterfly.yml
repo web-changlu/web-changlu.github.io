@@ -839,6 +839,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    <meta name="baidu-site-verification" content="code-XEVxiqr2bG" />
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2923893_akri5pp52q8.css">
     <link rel="stylesheet" href="/css/color@1.0.1.css">
     <link rel="stylesheet" href="/css/custom@1.0.1.css">
